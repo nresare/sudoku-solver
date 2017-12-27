@@ -153,7 +153,7 @@ def board_from_str(input: str) -> Board:
     return board_from_lines(input.split("\n"))
 
 
-def solve(board: Board, recursions=0) -> Optional[Board]:
+def solve(board: Board) -> Optional[Board]:
     """
     Attempt to solve board. Return None if board can never be solved.
     if a solution is found, return the Board representing the solution
@@ -187,7 +187,7 @@ def solve(board: Board, recursions=0) -> Optional[Board]:
             for i in possibles:
                 b = deepcopy(board)
                 b.items[coordinates[0]][coordinates[1]] = i
-                ret = solve(b, recursions + 1)
+                ret = solve(b)
                 if ret:
                     return ret
             return None
@@ -195,7 +195,7 @@ def solve(board: Board, recursions=0) -> Optional[Board]:
 
 
 if __name__ == '__main__':
-    board = read_input("hard.txt")
+    board = read_input("hard2.txt")
     board.print()
     result = solve(board)
     if not result:
