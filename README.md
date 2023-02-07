@@ -1,4 +1,4 @@
-Solving sudokus are fun. I decided to have a go at writing some
+Solving sudokus is fun. I decided to write some
 code that solves them. The goal here is clarity of the algorithm, not finding
 the most optimised solution. Feel free to use however you want.
 
